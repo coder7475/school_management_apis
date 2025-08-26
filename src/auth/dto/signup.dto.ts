@@ -8,7 +8,7 @@ import {
   IsNotEmpty,
 } from 'class-validator';
 import { Transform, TransformFnParams } from 'class-transformer';
-import { Role } from 'src/types';
+import { Role } from '../../types';
 
 export class SignupDto {
   @IsEmail({}, { message: 'Please provide a valid email address' })

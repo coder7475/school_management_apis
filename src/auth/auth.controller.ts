@@ -1,16 +1,9 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Req,
-  Res,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { SigninDto, SignupDto } from './dto/login.dto';
-import type { Request, Response } from 'express';
-import { JwtAuthGuard } from './jwt.guard';
+
+// import type { Request, Response } from 'express';
+// import { JwtAuthGuard } from './jwt.guard';
+import { SignupDto } from './dto/signup.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -21,29 +14,29 @@ export class AuthController {
     return this.authService.signup(dto);
   }
 
-  @Post('signin')
-  async signin(
-    @Body() dto: SigninDto,
-    @Res({ passthrough: true }) res: Response,
-  ) {
-    return this.authService.signin(dto, res);
-  }
+  // @Post('signin')
+  // async signin(
+  //   @Body() dto: SigninDto,
+  //   @Res({ passthrough: true }) res: Response,
+  // ) {
+  //   return this.authService.signin(dto, res);
+  // }
 
-  @Post('logout')
-  logout(@Res({ passthrough: true }) res: Response) {
-    return this.authService.logout(res);
-  }
+  // @Post('logout')
+  // logout(@Res({ passthrough: true }) res: Response) {
+  //   return this.authService.logout(res);
+  // }
 
-  // Session - valid token?
-  @UseGuards(JwtAuthGuard)
-  @Get('session')
-  async session(@Req() req: Request) {
-    const token = req?.cookies?.Authentication as string | undefined;
+  // // Session - valid token?
+  // @UseGuards(JwtAuthGuard)
+  // @Get('session')
+  // async session(@Req() req: Request) {
+  //   const token = req?.cookies?.Authentication as string | undefined;
 
-    if (typeof token !== 'string') {
-      throw new Error('Invalid authentication token');
-    }
+  //   if (typeof token !== 'string') {
+  //     throw new Error('Invalid authentication token');
+  //   }
 
-    return this.authService.session(token);
-  }
+  //   return this.authService.session(token);
+  // }
 }
