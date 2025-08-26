@@ -109,7 +109,7 @@ docker compose up -d
 
 ## ER Diagram
 
-[![](./mini_scholl_management.png)]
+[![ER_diagram](./er_diagram.png)]
 
 ### Drizzle
 
