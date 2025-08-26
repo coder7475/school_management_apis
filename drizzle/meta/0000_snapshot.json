@@ -1,5 +1,5 @@
 {
-  "id": "48f62598-f08e-481b-b851-bfd4f426ac45",
+  "id": "0cde889e-d08b-4bee-9ff3-08f0cefb6b37",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -150,6 +150,12 @@
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
+        },
+        "hashPassword": {
+          "name": "hashPassword",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
         },
         "createdAt": {
           "name": "createdAt",
