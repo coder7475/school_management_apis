@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  UseGuards,
+  Query,
+  DefaultValuePipe,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { StudentsService } from './students.service';
 import { CreateStudentDto } from './dto/create-student.dto';
 
@@ -20,8 +30,12 @@ export class StudentsController {
 
   @Get()
   @Roles(Role.Admin, Role.Teacher)
-  findAll() {
-    return this.studentsService.findAll();
+  findAll(
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+  ) {
+    const cappedLimit = Math.min(Math.max(limit, 1), 100);
+    return this.studentsService.findAll(page, cappedLimit);
   }
 
   @Get(':id')

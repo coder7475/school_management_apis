@@ -24,10 +24,34 @@ export class StudentsService {
     };
   }
 
-  findAll() {
-    return `This action returns all students`;
+  // Get All students
+  async findAll(page: number = 1, limit: number = 10) {
+    const offset = (page - 1) * limit;
+    const result = await this.db.query.students.findMany({
+      limit,
+      offset,
+    });
+
+    // Get total count of users
+    const count = await this.db.$count(students);
+
+    const total = Number(count);
+    const metaData = {
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    };
+
+    return {
+      success: true,
+      message: 'Students list retrieved successfully',
+      data: result,
+      metaData,
+    };
   }
 
+  // Get One Student
   async findOne(id: string) {
     const [student] = await this.db
       .select()
