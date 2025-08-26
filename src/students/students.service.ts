@@ -3,6 +3,7 @@ import { CreateStudentDto } from './dto/create-student.dto';
 import { DRIZZLE } from 'src/drizzle/drizzle.module';
 import { type DrizzleDB } from 'src/drizzle/types/drizzle';
 import { students } from 'src/drizzle/schema/students.schema';
+import { eq } from 'drizzle-orm';
 
 @Injectable()
 export class StudentsService {
@@ -27,7 +28,24 @@ export class StudentsService {
     return `This action returns all students`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} student`;
+  async findOne(id: string) {
+    const [student] = await this.db
+      .select()
+      .from(students)
+      .where(eq(students.id, String(id)))
+      .limit(1);
+    if (!student) {
+      return {
+        success: false,
+        message: `Student with id #${id} not found`,
+        data: null,
+      };
+    }
+
+    return {
+      success: true,
+      message: 'Student retrieved successfully',
+      data: student,
+    };
   }
 }
