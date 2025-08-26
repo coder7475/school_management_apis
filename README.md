@@ -146,3 +146,11 @@ pnpm drizzle-kit check
 pnpm drizzle-kit up
 pnpm drizzle-kit studio
 ```
+
+### Nest cli
+
+generate rest apis without test
+
+```
+nest g res user --no-spec
+```
