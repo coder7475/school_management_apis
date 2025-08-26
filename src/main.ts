@@ -40,7 +40,6 @@ async function bootstrap() {
     .setTitle('Mini School Management API')
     .setDescription('API documentation for the School Management backend')
     .setVersion('1.0')
-    .addBearerAuth() // JWT authentication
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
