@@ -26,9 +26,10 @@ export class ClassesController {
     return await this.classesService.enrollStudent(id, dto.studentId);
   }
 
-  @Get()
-  @Roles(Role.Admin)
-  findAll() {
-    return this.classesService.findAll();
+  // get students in a class
+  @Get(':id/students')
+  @Roles(Role.Admin, Role.Teacher)
+  async getStudentsInClass(@Param('id') id: string) {
+    return await this.classesService.getStudentsInClass(id);
   }
 }

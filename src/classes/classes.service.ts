@@ -64,7 +64,26 @@ export class ClassesService {
     return { message: 'Student enrolled successfully' };
   }
 
-  findAll() {
-    return `This action returns all classes`;
+  // get students in a class
+  async getStudentsInClass(classId: string) {
+    // check if class exists
+    const cls = await this.db
+      .select()
+      .from(classes)
+      .where(eq(classes.id, classId))
+      .limit(1);
+
+    if (!cls.length) throw new NotFoundException('Class not found');
+
+    // find all students with same classId
+    const result = await this.db
+      .select()
+      .from(students)
+      .where(eq(students.classId, classId));
+
+    return {
+      message: 'Successfully retrieved all students in a class',
+      data: result,
+    };
   }
 }
