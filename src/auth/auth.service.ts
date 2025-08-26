@@ -1,4 +1,10 @@
-import { BadRequestException, Inject, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Inject,
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import bcrypt from 'bcrypt';
 import { Response } from 'express';
 import { JwtService } from '@nestjs/jwt';
@@ -9,22 +15,18 @@ import { IResponse } from '../types/response';
 import { IUser } from '../types/user';
 import { users } from '../drizzle/schema/users.schema';
 import { eq } from 'drizzle-orm';
-
-function hasPgCode(error: unknown): error is { code: string } {
-  return (
-    typeof error === 'object' &&
-    error !== null &&
-    'code' in error &&
-    typeof (error as { code?: unknown }).code === 'string'
-  );
-}
-
+import { hasPgCode } from 'src/utils/pgCode';
+import { LoginDto } from './dto/login.dto';
+import { JwtPayload, Role } from './../types';
+import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class AuthService {
   constructor(
     @Inject(DRIZZLE) private db: DrizzleDB,
     private jwtService: JwtService,
+    private config: ConfigService,
   ) {}
+
   // Sign Up - Register
   async signup(dto: SignupDto): Promise<IResponse<IUser>> {
     const { email, password } = dto;
@@ -73,34 +75,46 @@ export class AuthService {
       throw err;
     }
   }
-  // Login
-  // async signin(dto: SigninDto, res: Response) {
-  //   const { user_name, password, rememberMe } = dto;
 
-  //   const user = await this.prisma.user.findUnique({
-  //     where: { user_name },
-  //   });
+  // Signin - Login
+  async login(dto: LoginDto) {
+    const { email, password } = dto;
 
-  //   if (!user) throw new NotFoundException('User not found!');
+    const existingUser = await this.db
+      .select()
+      .from(users)
+      .where(eq(users.email, email))
+      .limit(1);
 
-  //   const valid = await bcrypt.compare(password, user.password);
-  //   if (!valid) throw new UnauthorizedException('Incorrect password!');
+    if (!existingUser) throw new NotFoundException('User not found!');
 
-  //   const payload = { sub: user.user_id, username: user.user_name };
+    const valid = await bcrypt.compare(password, existingUser[0].hashPassword);
+    if (!valid) throw new UnauthorizedException('Incorrect password!');
 
-  //   const token = await this.jwtService.signAsync(payload, {
-  //     expiresIn: rememberMe ? '7d' : '30m',
-  //   });
+    const payload: JwtPayload = {
+      sub: existingUser[0].id,
+      email: existingUser[0].email,
+      role: existingUser[0].role as Role,
+    };
 
-  //   res.cookie('Authentication', token, {
-  //     httpOnly: true,
-  //     secure: true,
-  //     sameSite: 'none',
-  //     // Turn it on for production
-  //     // domain: 'shops.robiulhossain.com',
-  //     maxAge: rememberMe ? 7 * 24 * 60 * 60 * 1000 : 30 * 60 * 1000,
-  //   });
+    const tokens = this.getTokens(payload);
 
+    return tokens;
+  }
+
+  private getTokens(payload: JwtPayload) {
+    const accessToken = this.jwtService.sign(payload, {
+      secret: this.config.get<string>('JWT_ACCESS_SECRET'),
+      expiresIn: this.config.get<string>('JWT_ACCESS_EXPIRES_IN'),
+    });
+
+    const refreshToken = this.jwtService.sign(payload, {
+      secret: this.config.get<string>('JWT_REFRESH_SECRET'),
+      expiresIn: this.config.get<string>('JWT_REFRESH_EXPIRES_IN'),
+    });
+
+    return { accessToken, refreshToken };
+  }
   //   const data = {
   //     user_name: user.user_name,
   //     createdAt: user.createdAt,
