@@ -109,6 +109,8 @@ docker compose up -d
 
 ## ER Diagram
 
+[![](./mini_scholl_management.png)]
+
 ### Drizzle
 
 generate
