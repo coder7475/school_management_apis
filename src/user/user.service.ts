@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 
 import { DRIZZLE } from '../drizzle/drizzle.module';
 import type { DrizzleDB } from '../drizzle/types/drizzle';
-import { users } from 'src/drizzle/schema/users.schema';
+import { users } from '../drizzle/schema/users.schema';
 
 @Injectable()
 export class UserService {

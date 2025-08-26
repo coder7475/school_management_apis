@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
 import { SignupDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
 import type { Request, Response } from 'express';
-import { parseCookieMaxAge } from 'src/utils/parseMaxAge';
+import { parseCookieMaxAge } from '../utils/parseMaxAge';
 import { ConfigService } from '@nestjs/config';
 import { JwtAuthGuard } from './jwt.guard';
 
