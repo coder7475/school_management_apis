@@ -1,0 +1,1268 @@
+{
+	"info": {
+		"_postman_id": "0fa512f8-91fd-4a39-8f83-8252cc1462cb",
+		"name": "Mini School Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30945457"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Robiul Hossain\",\r\n    \"email\": \"robiulhossain7475@gmail.com\",\r\n    \"password\": \"Password123!\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Robiul Hossain\",\r\n    \"email\": \"robiulhossain7475@gmail.com\",\r\n    \"password\": \"Password123!\",\r\n    \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:50:49 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"aa-FBNBpAzbd20GHO7sT7IVwauTI1g\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::95xd4-1756230648849-26c8c9f90e9b"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User created successfully.\",\n    \"data\": {\n        \"id\": \"e58f3f85-5740-49f9-b113-1bc1ae178634\",\n        \"name\": \"Robiul Hossain\",\n        \"email\": \"robiulhossain7475@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"Password123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"Password123!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "578"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:46:13 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"242-NV0+u0q/P24bVdJcsmY7vEwdfCo\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAwMGMxOC1iM2JjLTQxYWItOTljOS05YWNlMzU3ZTBkZTEiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTYyMzAzNzMsImV4cCI6MTc1NjIzMzk3M30.ONLszvhzGQWbcrmNRrRHs-tCelmT7RVh2jK8EyshCI4; Max-Age=3600; Path=/; Expires=Tue, 26 Aug 2025 18:46:13 GMT; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAwMGMxOC1iM2JjLTQxYWItOTljOS05YWNlMzU3ZTBkZTEiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTYyMzAzNzMsImV4cCI6MTc1NjgzNTE3M30.OLb8kOPDWZUxNl21ZsUcRoniHCyaUcEFSLAVrxFvvJQ; Max-Age=604800; Path=/; Expires=Tue, 02 Sep 2025 17:46:13 GMT; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::rxwst-1756230372497-6e61f74faf05"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful!\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAwMGMxOC1iM2JjLTQxYWItOTljOS05YWNlMzU3ZTBkZTEiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTYyMzAzNzMsImV4cCI6MTc1NjIzMzk3M30.ONLszvhzGQWbcrmNRrRHs-tCelmT7RVh2jK8EyshCI4\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAwMGMxOC1iM2JjLTQxYWItOTljOS05YWNlMzU3ZTBkZTEiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTYyMzAzNzMsImV4cCI6MTc1NjgzNTE3M30.OLb8kOPDWZUxNl21ZsUcRoniHCyaUcEFSLAVrxFvvJQ\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:51:24 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"41-QHy4ADTuZU0FouZJS59E99t1ODc\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::qtvp2-1756230684036-088a5dada855"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Logged out successfully!\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/refresh-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "323"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:51:11 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"143-ewKKy7bIK1tm7t/iXxBolz7GZe4\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=j%3A%7B%22accessToken%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTYyMzA2NzEsImV4cCI6MTc1NjIzNDI3MSwic3ViIjoiNjMwMDBjMTgtYjNiYy00MWFiLTk5YzktOWFjZTM1N2UwZGUxIn0.IPztoeuPtOThrhMNi1WFUreEN3fVch-7q0dCfxXm0VE%22%7D; Max-Age=3600; Path=/; Expires=Tue, 26 Aug 2025 18:51:11 GMT; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::hg4xp-1756230671654-b655bf8ae9a6"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"New Access token Issued!\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTYyMzA2NzEsImV4cCI6MTc1NjIzNDI3MSwic3ViIjoiNjMwMDBjMTgtYjNiYy00MWFiLTk5YzktOWFjZTM1N2UwZGUxIn0.IPztoeuPtOThrhMNi1WFUreEN3fVch-7q0dCfxXm0VE\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Age",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:46:48 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"57-/PHgtPjeMu7uWJ7Y+weZXp91wd4\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::ps64z-1756230408316-81efcd08c8e7"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"63000c18-b3bc-41ab-99c9-9ace357e0de1\",\n    \"email\": \"john@example.com\",\n    \"role\": \"admin\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maria Smith\",\r\n    \"age\": 18,\r\n    \"userId\": \"0db6f5a1-e9c5-4d49-a78d-7f2dd457639a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Alice Smith\",\r\n    \"age\": 15,\r\n    \"userId\": \"0db6f5a1-e9c5-4d49-a78d-7f2dd457639a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/students",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"students"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "242"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f2-8OWXAe1rf0gN0ArEAK1f5XFKHZI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 16:27:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Student created successfully\",\n    \"data\": {\n        \"id\": \"850a6dd7-4574-4156-a5d9-17f9a74926dd\",\n        \"userId\": \"0db6f5a1-e9c5-4d49-a78d-7f2dd457639a\",\n        \"name\": \"Alice Smith\",\n        \"age\": 15,\n        \"classId\": null,\n        \"createdAt\": \"2025-08-26T16:27:10.120Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/students?page=4&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"students"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "4"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/students",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2276"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e4-71vcLKeRd35h7e5xIHe2ETAiW28\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 16:38:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Students list retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"296c5fce-8c3f-45ab-8117-f417d83bda9f\",\n            \"userId\": \"9fd098bd-fbf0-43f2-8acb-351b95f96aa9\",\n            \"name\": \"Marc Rogahn II\",\n            \"age\": 11,\n            \"classId\": \"eb63328f-0439-4667-9feb-7863cdbeec7d\",\n            \"createdAt\": \"2025-08-25T21:58:16.353Z\"\n        },\n        {\n            \"id\": \"1c0c9263-d3c0-4bc3-b04f-8fe0d7b3da80\",\n            \"userId\": \"e6d6edf6-c21c-4c38-a473-181a39dde3db\",\n            \"name\": \"Jared Jacobs\",\n            \"age\": 8,\n            \"classId\": \"eb63328f-0439-4667-9feb-7863cdbeec7d\",\n            \"createdAt\": \"2025-05-08T17:24:59.788Z\"\n        },\n        {\n            \"id\": \"12131c4a-d4e9-432f-a3c8-5fc4fcfd78fb\",\n            \"userId\": \"40248c2f-ee0e-4d79-9840-34996f8661c9\",\n            \"name\": \"Clyde Connelly Jr.\",\n            \"age\": 13,\n            \"classId\": \"bcee858d-b1a2-4f18-bc64-bd4d783fd8d6\",\n            \"createdAt\": \"2025-04-25T01:30:18.121Z\"\n        },\n        {\n            \"id\": \"7ab7edce-b1c1-4cd9-83d0-f54c4e71e780\",\n            \"userId\": \"9075ae26-ea62-4e9b-9b44-4be5c2dda9c9\",\n            \"name\": \"Enrique Fay\",\n            \"age\": 11,\n            \"classId\": \"63a52a6a-175b-4ac5-8314-9fd9559e1a15\",\n            \"createdAt\": \"2025-04-12T21:18:20.192Z\"\n        },\n        {\n            \"id\": \"ef415c0f-44df-4c00-9dec-2f33fbcbf363\",\n            \"userId\": \"6ebc9897-d246-4df5-a90f-9b232cc86515\",\n            \"name\": \"Brandon Koch\",\n            \"age\": 8,\n            \"classId\": \"0c762fa1-6d36-4140-be3a-39d47ba2ad0e\",\n            \"createdAt\": \"2025-01-20T19:14:32.097Z\"\n        },\n        {\n            \"id\": \"e310da5c-82d8-435f-b889-ef3c5eac9559\",\n            \"userId\": \"6806631c-3296-45d8-8b54-dbe9e7145d72\",\n            \"name\": \"Jennifer Sporer\",\n            \"age\": 13,\n            \"classId\": \"76d18dbf-f547-4ca2-8cd2-68b1491369ad\",\n            \"createdAt\": \"2025-01-26T11:41:49.980Z\"\n        },\n        {\n            \"id\": \"491de44e-54e0-4700-8d83-1f460331e5df\",\n            \"userId\": \"f6b62078-5fee-4b59-9e8d-c47dc0ba48fd\",\n            \"name\": \"Della Rohan\",\n            \"age\": 11,\n            \"classId\": \"0c762fa1-6d36-4140-be3a-39d47ba2ad0e\",\n            \"createdAt\": \"2025-06-01T20:35:43.394Z\"\n        },\n        {\n            \"id\": \"30d73d7f-4ad4-4743-ac16-4f571666e6d8\",\n            \"userId\": \"c2d23359-73c8-4470-824b-0c2761315749\",\n            \"name\": \"Wanda Harber\",\n            \"age\": 18,\n            \"classId\": \"76d18dbf-f547-4ca2-8cd2-68b1491369ad\",\n            \"createdAt\": \"2024-11-26T14:09:21.672Z\"\n        },\n        {\n            \"id\": \"06e59be0-2573-446d-a601-8e9d9b6faa41\",\n            \"userId\": \"513f455d-72ec-45e2-8aae-33e0711caeeb\",\n            \"name\": \"Curtis Hintz-Herzog\",\n            \"age\": 7,\n            \"classId\": \"76d18dbf-f547-4ca2-8cd2-68b1491369ad\",\n            \"createdAt\": \"2024-09-20T02:33:27.787Z\"\n        },\n        {\n            \"id\": \"21a23835-94f7-422e-8cde-338a3b693856\",\n            \"userId\": \"9bed3430-ac61-48a2-b330-39d220452925\",\n            \"name\": \"Heidi Skiles\",\n            \"age\": 11,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2024-11-15T04:32:13.543Z\"\n        }\n    ],\n    \"metaData\": {\n        \"total\": 51,\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalPages\": 6\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/students/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"students",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "850a6dd7-4574-4156-a5d9-17f9a74926dd"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/students/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"students",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "850a6dd7-4574-4156-a5d9-17f9a74926dd"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-Co76JDAME6csIKowz5Zwb/Dl5NY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 16:33:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Student retrieved successfully\",\n    \"data\": {\n        \"id\": \"850a6dd7-4574-4156-a5d9-17f9a74926dd\",\n        \"userId\": \"0db6f5a1-e9c5-4d49-a78d-7f2dd457639a\",\n        \"name\": \"Alice Smith\",\n        \"age\": 15,\n        \"classId\": null,\n        \"createdAt\": \"2025-08-26T16:27:10.120Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Get All users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2052"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"804-eYXsNObMMiDzZEIRHp0ty3RfR88\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 16:25:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Users list retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"0db6f5a1-e9c5-4d49-a78d-7f2dd457639a\",\n            \"name\": \"Santina.Franecki35\",\n            \"email\": \"Jadyn_Streich13@yahoo.com\",\n            \"role\": \"student\",\n            \"hashPassword\": \"V3kbauly_r5kpVM\",\n            \"createdAt\": \"2024-11-27T12:37:42.209Z\"\n        },\n        {\n            \"id\": \"a104974d-b89a-4128-ad62-6806ad1f2b1a\",\n            \"name\": \"Lonny_Walter\",\n            \"email\": \"Madeline_Ryan73@gmail.com\",\n            \"role\": \"student\",\n            \"hashPassword\": \"riqbHqWQGi2D5sC\",\n            \"createdAt\": \"2024-10-17T08:01:00.790Z\"\n        },\n        {\n            \"id\": \"af571a85-81b3-4abc-adb8-e6d8266dfa1e\",\n            \"name\": \"Lily_Kozey91\",\n            \"email\": \"Nya_Satterfield43@gmail.com\",\n            \"role\": \"student\",\n            \"hashPassword\": \"Jb51_pg2yhXY0p9\",\n            \"createdAt\": \"2024-09-27T08:50:04.364Z\"\n        },\n        {\n            \"id\": \"a6ac61de-2fb1-4923-870b-c340c61924a9\",\n            \"name\": \"Jaiden.OKon-Wilderman\",\n            \"email\": \"Nathanael_Mills35@gmail.com\",\n            \"role\": \"teacher\",\n            \"hashPassword\": \"_U88WgNhotGfKOk\",\n            \"createdAt\": \"2024-12-05T08:16:27.916Z\"\n        },\n        {\n            \"id\": \"7e35d98f-b78b-4a07-a34e-f3f4854cb88c\",\n            \"name\": \"Marc_Abbott90\",\n            \"email\": \"Beth78@yahoo.com\",\n            \"role\": \"student\",\n            \"hashPassword\": \"taxkExGO3BETRdY\",\n            \"createdAt\": \"2025-02-01T22:24:03.991Z\"\n        },\n        {\n            \"id\": \"513f455d-72ec-45e2-8aae-33e0711caeeb\",\n            \"name\": \"Tatyana52\",\n            \"email\": \"Caitlyn78@gmail.com\",\n            \"role\": \"admin\",\n            \"hashPassword\": \"BCroc8B57vcrdGe\",\n            \"createdAt\": \"2025-03-12T14:41:19.667Z\"\n        },\n        {\n            \"id\": \"32fc6ee6-8380-4a6d-93d2-c75964397e3b\",\n            \"name\": \"Monique.Renner\",\n            \"email\": \"Molly86@gmail.com\",\n            \"role\": \"teacher\",\n            \"hashPassword\": \"_NNkABQ_DLzRZC3\",\n            \"createdAt\": \"2024-10-16T08:41:57.696Z\"\n        },\n        {\n            \"id\": \"ccd764f8-21e8-4c91-87db-2799290f387b\",\n            \"name\": \"Torrey.Maggio\",\n            \"email\": \"Leonardo.Watsica89@hotmail.com\",\n            \"role\": \"admin\",\n            \"hashPassword\": \"GAgGfBTzmOBs9CW\",\n            \"createdAt\": \"2025-04-08T05:39:52.048Z\"\n        },\n        {\n            \"id\": \"bf23f516-bc65-4b34-9b2b-e852a4aa2da3\",\n            \"name\": \"Barbara_Friesen\",\n            \"email\": \"Donnie11@hotmail.com\",\n            \"role\": \"admin\",\n            \"hashPassword\": \"Vtf9LsFGRdRHH71\",\n            \"createdAt\": \"2025-01-17T12:11:20.953Z\"\n        },\n        {\n            \"id\": \"60b155e5-ce23-4e46-a531-c42059d21935\",\n            \"name\": \"Carolyne15\",\n            \"email\": \"Kurtis_Larson67@gmail.com\",\n            \"role\": \"teacher\",\n            \"hashPassword\": \"WajAkhjKL_UZRSe\",\n            \"createdAt\": \"2025-05-16T07:35:23.854Z\"\n        }\n    ],\n    \"metaData\": {\n        \"total\": 53,\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalPages\": 6\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Classes",
+			"item": [
+				{
+					"name": "Create Class",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"CSE\",\r\n    \"section\": \"A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/classes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"classes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CSE\",\r\n    \"section\": \"A\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/classes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"classes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b0-KWaCpsZqUzYjMtUCOfkAI/0pulI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 16:50:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Student created successfully\",\n    \"data\": {\n        \"id\": \"9d5865b6-cebe-4749-aff3-d86d92b89903\",\n        \"name\": \"CSE\",\n        \"section\": \"A\",\n        \"createdAt\": \"2025-08-26T16:50:46.520Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Enroll Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\": \"850a6dd7-4574-4156-a5d9-17f9a74926dd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/classes/:id/enroll",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"classes",
+								":id",
+								"enroll"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9d5865b6-cebe-4749-aff3-d86d92b89903"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"studentId\": \"850a6dd7-4574-4156-a5d9-17f9a74926dd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/classes/:id/enroll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"classes",
+										":id",
+										"enroll"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9d5865b6-cebe-4749-aff3-d86d92b89903"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-IxMGJ1ooyLK6/0VKxxGHep63d1I\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:15:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Student enrolled successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Students in Class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/classes/:id/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"classes",
+								":id",
+								"students"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "f2faf78e-78e4-4830-8ba8-96a331e5c20d"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/classes/:id/students",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"classes",
+										":id",
+										"students"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "f2faf78e-78e4-4830-8ba8-96a331e5c20d"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Age",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Aug 2025 17:46:25 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"61d-64j7zHlRNAOh5Mn1vARHrbYaOOA\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::mp2zm-1756230385255-214a5a7a6b4c"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully retrieved all students in a class\",\n    \"data\": [\n        {\n            \"id\": \"21a23835-94f7-422e-8cde-338a3b693856\",\n            \"userId\": \"9bed3430-ac61-48a2-b330-39d220452925\",\n            \"name\": \"Heidi Skiles\",\n            \"age\": 11,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2024-11-15T04:32:13.543Z\"\n        },\n        {\n            \"id\": \"64c10832-126d-4cec-b98b-a995e27a7d30\",\n            \"userId\": \"8abd27cc-47b7-46fb-806b-f1605f6c4090\",\n            \"name\": \"Ms. Kelly Hilll\",\n            \"age\": 17,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2025-01-07T22:05:38.990Z\"\n        },\n        {\n            \"id\": \"59d31589-9ed9-4353-8182-7469b7afe9e8\",\n            \"userId\": \"74aefdc8-ca0f-44ff-a7e9-0a572802429d\",\n            \"name\": \"Donnie Heathcote\",\n            \"age\": 6,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2025-03-31T15:51:17.027Z\"\n        },\n        {\n            \"id\": \"2491814f-cff3-4e1f-a257-5d8970d41eaf\",\n            \"userId\": \"bf23f516-bc65-4b34-9b2b-e852a4aa2da3\",\n            \"name\": \"Rickey Waelchi\",\n            \"age\": 8,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2024-09-04T05:37:22.864Z\"\n        },\n        {\n            \"id\": \"c2c46dd6-f6ba-4b8d-bc10-700bb991ec48\",\n            \"userId\": \"a330dc18-5e27-47fa-9469-55f83153ff25\",\n            \"name\": \"Mable Lakin\",\n            \"age\": 16,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2025-07-01T17:30:58.108Z\"\n        },\n        {\n            \"id\": \"1dd11940-14d6-4290-a18d-c1ff8b5cadb5\",\n            \"userId\": \"0db6f5a1-e9c5-4d49-a78d-7f2dd457639a\",\n            \"name\": \"Ray Reilly\",\n            \"age\": 12,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2025-08-24T08:14:20.869Z\"\n        },\n        {\n            \"id\": \"a39b1f6a-9708-4e64-8a4a-8e8604876dc1\",\n            \"userId\": \"af571a85-81b3-4abc-adb8-e6d8266dfa1e\",\n            \"name\": \"Mr. Glenn Huel\",\n            \"age\": 7,\n            \"classId\": \"f2faf78e-78e4-4830-8ba8-96a331e5c20d\",\n            \"createdAt\": \"2024-10-31T16:34:25.044Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		}
+	]
+}
