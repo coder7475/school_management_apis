@@ -1,11 +1,11 @@
-import { Body, Controller, Post, Res } from '@nestjs/common';
+import { Body, Controller, Post, Req, Res } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 // import type { Request, Response } from 'express';
 // import { JwtAuthGuard } from './jwt.guard';
 import { SignupDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
-import type { Response } from 'express';
+import type { Request, Response } from 'express';
 import { parseCookieMaxAge } from 'src/utils/parseMaxAge';
 import { ConfigService } from '@nestjs/config';
 
@@ -47,19 +47,47 @@ export class AuthController {
 
   @Post('logout')
   logout(@Res({ passthrough: true }) res: Response) {
-    res.clearCookie('accessToken', {
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
-    });
-
-    res.clearCookie('refreshToken', {
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
-    });
+    res.clearCookie('accessToken');
+    res.clearCookie('refreshToken');
 
     return { success: true, message: 'Logged out successfully!', data: null };
+  }
+
+  // Accept refresh token from cookie or body
+  @Post('refresh-token')
+  refresh(
+    @Body('refreshToken') bodyToken: string,
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    const cookieToken: string | undefined =
+      typeof req.cookies?.refreshToken === 'string'
+        ? req.cookies.refreshToken
+        : undefined;
+
+    const token: string | undefined =
+      typeof bodyToken === 'string' && bodyToken.length > 0
+        ? bodyToken
+        : cookieToken;
+
+    if (!token) {
+      return { message: 'No refresh token provided' };
+    }
+
+    const newAccessToken = this.authService.refresh(token);
+
+    res.cookie('accessToken', newAccessToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+      maxAge: parseCookieMaxAge(this.config.get('JWT_ACCESS_EXPIRES_IN')),
+    });
+
+    return {
+      success: true,
+      message: 'New Access token Issued!',
+      data: newAccessToken,
+    };
   }
 
   // // Session - valid token?

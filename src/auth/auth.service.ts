@@ -116,6 +116,27 @@ export class AuthService {
     return { accessToken, refreshToken };
   }
 
+  // Refresh token verification and new access token issuance
+  refresh(refreshToken: string) {
+    try {
+      const payload: JwtPayload = this.jwtService.verify(refreshToken, {
+        secret: this.config.get<string>('JWT_REFRESH_SECRET'),
+      });
+
+      const accessToken = this.jwtService.sign(
+        { email: payload.email, role: payload.role },
+        {
+          secret: this.config.get<string>('JWT_ACCESS_SECRET'),
+          subject: String(payload.sub),
+          expiresIn: this.config.get<string>('JWT_ACCESS_EXPIRES_IN'),
+        },
+      );
+      return { accessToken };
+    } catch {
+      throw new UnauthorizedException('Refresh token invalid or expired');
+    }
+  }
+
   // Session - valid token?
   // async session(token: string) {
   //   let userId: string;
