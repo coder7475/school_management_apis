@@ -15,6 +15,13 @@
       "when": 1756184004998,
       "tag": "0001_panoramic_whirlwind",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1756184709467,
+      "tag": "0002_flawless_firebrand",
+      "breakpoints": true
     }
   ]
 }
