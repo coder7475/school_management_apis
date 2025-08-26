@@ -9,14 +9,13 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
-// import type { Request, Response } from 'express';
-// import { JwtAuthGuard } from './jwt.guard';
 import { SignupDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
 import type { Request, Response } from 'express';
 import { parseCookieMaxAge } from '../utils/parseMaxAge';
 import { ConfigService } from '@nestjs/config';
 import { JwtAuthGuard } from './jwt.guard';
+import { Public } from 'src/public.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -25,11 +24,13 @@ export class AuthController {
     private config: ConfigService,
   ) {}
 
+  @Public()
   @Post('signup')
   async signup(@Body() dto: SignupDto) {
     return this.authService.signup(dto);
   }
 
+  @Public()
   @Post('login')
   async login(
     @Body() dto: LoginDto,
@@ -54,6 +55,7 @@ export class AuthController {
     return { success: true, message: 'Login successful!', data: result };
   }
 
+  @Public()
   @Post('logout')
   logout(@Res({ passthrough: true }) res: Response) {
     res.clearCookie('accessToken');
@@ -63,6 +65,7 @@ export class AuthController {
   }
 
   // Accept refresh token from cookie or body
+  @Public()
   @Post('refresh-token')
   refresh(
     @Body('refreshToken') bodyToken: string,
