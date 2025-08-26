@@ -152,5 +152,11 @@ pnpm drizzle-kit studio
 generate rest apis without test
 
 ```
-nest g res user --no-spec
+nest g res <module_name> --no-spec
+```
+
+example: auth
+
+```
+nest g res auth --no-spec
 ```
