@@ -6,7 +6,6 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import bcrypt from 'bcrypt';
-import { Response } from 'express';
 import { JwtService } from '@nestjs/jwt';
 import { DRIZZLE } from '../drizzle/drizzle.module';
 import { type DrizzleDB } from '../drizzle/types/drizzle';
@@ -15,7 +14,7 @@ import { IResponse } from '../types/response';
 import { IUser } from '../types/user';
 import { users } from '../drizzle/schema/users.schema';
 import { eq } from 'drizzle-orm';
-import { hasPgCode } from 'src/utils/pgCode';
+import { hasPgCode } from '../utils/pgCode';
 import { LoginDto } from './dto/login.dto';
 import { JwtPayload, Role } from './../types';
 import { ConfigService } from '@nestjs/config';
