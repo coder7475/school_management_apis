@@ -124,3 +124,25 @@ migrate
 ```
 npx drizzle-kit migrate
 ```
+
+seed
+
+```
+pnpm run db:seed
+```
+
+studio
+
+```
+npx drizzle-kit studio
+```
+
+```
+pnpm drizzle-kit generate
+pnpm drizzle-kit migrate
+pnpm drizzle-kit push
+pnpm drizzle-kit pull
+pnpm drizzle-kit check
+pnpm drizzle-kit up
+pnpm drizzle-kit studio
+```
