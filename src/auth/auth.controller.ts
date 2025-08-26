@@ -45,10 +45,22 @@ export class AuthController {
     return { success: true, message: 'Login successful!', data: result };
   }
 
-  // @Post('logout')
-  // logout(@Res({ passthrough: true }) res: Response) {
-  //   return this.authService.logout(res);
-  // }
+  @Post('logout')
+  logout(@Res({ passthrough: true }) res: Response) {
+    res.clearCookie('accessToken', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+    });
+
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+    });
+
+    return { success: true, message: 'Logged out successfully!', data: null };
+  }
 
   // // Session - valid token?
   // @UseGuards(JwtAuthGuard)
