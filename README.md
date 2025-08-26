@@ -89,7 +89,6 @@ API will be available at:
 - `users` – Authentication + roles (admin, teacher, student)
 - `students` – Student records
 - `classes` – Class records
-- `class_enrollments` – Join table for many-to-many students ↔ classes
 
 ---
 
