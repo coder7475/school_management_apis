@@ -115,23 +115,6 @@ export class AuthService {
 
     return { accessToken, refreshToken };
   }
-  //   const data = {
-  //     user_name: user.user_name,
-  //     createdAt: user.createdAt,
-  //   };
-
-  //   return { success: true, message: 'Login successful!', data };
-  // }
-  // Logout
-  logout(res: Response) {
-    res.clearCookie('Authentication', {
-      // domain: process.env.COOKIE_DOMAIN,
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
-    });
-    return { success: true, message: 'Logged out successfully!', data: null };
-  }
 
   // Session - valid token?
   // async session(token: string) {
