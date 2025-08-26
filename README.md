@@ -104,3 +104,21 @@ Run database
 ```sh
 docker compose up -d
 ```
+
+## Database
+
+## ER Diagram
+
+### Drizzle
+
+generate
+
+```
+npx drizzle-kit generate
+```
+
+migrate
+
+```
+npx drizzle-kit migrate
+```
