@@ -1,6 +1,6 @@
 {
-  "id": "48f62598-f08e-481b-b851-bfd4f426ac45",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "0079c607-15ab-4b6b-bbc4-1fa94b4e4c8f",
+  "prevId": "48f62598-f08e-481b-b851-bfd4f426ac45",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -176,17 +176,7 @@
       "isRLSEnabled": false
     }
   },
-  "enums": {
-    "public.role": {
-      "name": "role",
-      "schema": "public",
-      "values": [
-        "admin",
-        "teacher",
-        "student"
-      ]
-    }
-  },
+  "enums": {},
   "schemas": {},
   "sequences": {},
   "roles": {},
