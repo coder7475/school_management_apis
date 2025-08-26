@@ -140,13 +140,16 @@ Example:
 nest g res auth --no-spec
 ```
 
-### Testing
+### 🧪 API Testing
 
-```bash
-pnpm run test       # unit tests
-pnpm run test:e2e   # e2e tests
-pnpm run test:cov   # coverage
-```
+- Download and import the [Postman Collection](./Mini%20School%20Management%20API.postman_collection.json) to try out all endpoints quickly.
+- Make sure to set the `baseUrl` environment variable in Postman to `http://localhost:3000/api` (or your deployed [URL](https://school-management-apis.vercel.app/)).
+- Auth endpoints require no token, but most others require a valid JWT (see Auth section above).
+
+### 📖 API Documentation
+
+- Interactive Swagger UI available at: [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
+- Explore all endpoints, schemas, and try requests directly from the browser.
 
 ---
 
