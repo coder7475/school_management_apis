@@ -3,3 +3,9 @@ export enum Role {
   Teacher = 'teacher',
   Student = 'student',
 }
+
+export interface JwtPayload {
+  sub: string;
+  email: string;
+  role: Role;
+}
