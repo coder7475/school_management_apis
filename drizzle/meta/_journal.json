@@ -8,6 +8,13 @@
       "when": 1756187338655,
       "tag": "0000_little_grey_gargoyle",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1756195524724,
+      "tag": "0001_crazy_glorian",
+      "breakpoints": true
     }
   ]
 }
