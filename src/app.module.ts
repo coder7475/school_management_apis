@@ -8,6 +8,8 @@ import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './auth/roles.guard';
 import { JwtAuthGuard } from './auth/jwt.guard';
+import { StudentsModule } from './students/students.module';
+import { ClassesModule } from './classes/classes.module';
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import { JwtAuthGuard } from './auth/jwt.guard';
     DrizzleModule,
     UserModule,
     AuthModule,
+    StudentsModule,
+    ClassesModule,
   ],
   controllers: [AppController],
   providers: [
