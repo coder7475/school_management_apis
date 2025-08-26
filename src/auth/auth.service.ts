@@ -136,25 +136,4 @@ export class AuthService {
       throw new UnauthorizedException('Refresh token invalid or expired');
     }
   }
-
-  // Session - valid token?
-  // async session(token: string) {
-  //   let userId: string;
-
-  //   try {
-  //     const payload: JwtPayload = await this.jwtService.verifyAsync(token);
-  //     userId = payload.sub;
-  //   } catch (err: unknown) {
-  //     Logger.error(err);
-  //     throw new UnauthorizedException('Invalid or expired token');
-  //   }
-
-  //   if (!user) throw new UnauthorizedException('Session invalid');
-
-  //   return {
-  //     user_id: user.user_id,
-  //     user_name: user.user_name,
-  //     shops: user.shops,
-  //   };
-  // }
 }

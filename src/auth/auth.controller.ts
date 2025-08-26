@@ -1,4 +1,12 @@
-import { Body, Controller, Post, Req, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 // import type { Request, Response } from 'express';
@@ -8,6 +16,7 @@ import { LoginDto } from './dto/login.dto';
 import type { Request, Response } from 'express';
 import { parseCookieMaxAge } from 'src/utils/parseMaxAge';
 import { ConfigService } from '@nestjs/config';
+import { JwtAuthGuard } from './jwt.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -90,16 +99,10 @@ export class AuthController {
     };
   }
 
-  // // Session - valid token?
-  // @UseGuards(JwtAuthGuard)
-  // @Get('session')
-  // async session(@Req() req: Request) {
-  //   const token = req?.cookies?.Authentication as string | undefined;
-
-  //   if (typeof token !== 'string') {
-  //     throw new Error('Invalid authentication token');
-  //   }
-
-  //   return this.authService.session(token);
-  // }
+  @UseGuards(JwtAuthGuard)
+  @Get('me')
+  me(@Req() req: Request) {
+    // user attached by JwtStrategy.validate
+    return req.user;
+  }
 }
