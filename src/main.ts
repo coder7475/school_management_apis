@@ -5,6 +5,10 @@ import cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
+// Swagger CDN CSS
+const CSS_URL =
+  'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ['log', 'error', 'warn', 'debug', 'verbose'], // enable detailed logging
@@ -43,7 +47,9 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup('api/docs', app, document);
+  SwaggerModule.setup('api/docs', app, document, {
+    customCssUrl: CSS_URL,
+  });
 
   await app.listen(port);
   logger.log(`🚀 Server running on http://localhost:${port}/api`);
